@@ -1,0 +1,48 @@
+name: Allure Report
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps
+
+      - name: Run Tests
+        if: always()
+        run: pytest --alluredir=allure-results
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Build Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
