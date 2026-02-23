@@ -1,4 +1,4 @@
-# Playwright Automation Framework (UI + API)
+# Playwright Automation Framework (UI)
 
 A professional-grade test automation framework built with **Python** and **Playwright**, following the **Page Object Model (POM)** design pattern. This project demonstrates end-to-end testing for both Web UI and REST APIs.
 
@@ -11,7 +11,6 @@ A professional-grade test automation framework built with **Python** and **Playw
 
 ## 📁 Project Structure
 ```text
-├── api/             # API clients and request wrappers
 ├── pages/           # Page Object Model classes (UI elements & actions)
 ├── tests/           # UI and API test scripts
 ├── testdata/        # External data (JSON, Excel) for Data-Driven Testing
