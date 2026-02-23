@@ -1,0 +1,28 @@
+{
+  "registration_user": {
+    "name": "QA Student",
+    "email": "gla_student_test@example.com",
+    "password": "SecurePass123",
+    "first_name": "Gemini",
+    "last_name": "User",
+    "address": "NH-2, Mathura",
+    "state": "Uttar Pradesh",
+    "city": "Mathura",
+    "zipcode": "281406",
+    "mobile": "9999999999"
+  },
+  "data_driven_users": [
+    {
+      "name": "Rahul",
+      "email": "rahul5651@example.com",
+      "password": "Secure123",
+      "city": "Delhi"
+    },
+    {
+      "name": "Priya",
+      "email": "priya5686@example.com",
+      "password": "Pass456",
+      "city": "Noida"
+    }
+  ]
+}
